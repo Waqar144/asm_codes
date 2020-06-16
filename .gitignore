@@ -1,0 +1,10 @@
+*.o
+a.out
+*.lst
+clc
+fileread
+hello
+hexdump
+infinite
+jump
+sum
