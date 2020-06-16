@@ -1,5 +1,7 @@
 section .data
+
 primestr: db "Prime", 10, 0
+
 notprimestr: db "Not prime", 10, 0
 
 primestr_len equ $-primestr
@@ -70,8 +72,8 @@ _start:
 
 	call is_prime
 
-	cmp rax, 0
-	jz Print_notprime
+	cmp rax, 1
+	jz Print_prime
 
 ;there's probably better ways to do this xD
 
