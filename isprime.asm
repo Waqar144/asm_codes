@@ -1,11 +1,11 @@
 section .data
 
 primestr: db "Prime", 10, 0
+primestr_len equ $-primestr
 
 notprimestr: db "Not prime", 10, 0
-
-primestr_len equ $-primestr
 notprimestr_len equ $-notprimestr
+
 
 section .text
 global _start
