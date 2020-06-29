@@ -136,11 +136,11 @@ apply_mxcsr:
 	pop 	rdx
 	pop 	rsi
 
-	mov 	[mxcsr_before], ecx
-	ldmxcsr [mxcsr_after]
+	;mov 	[mxcsr_before], ecx
+	;ldmxcsr [mxcsr_after]
 	movsd 	xmm2, [rsi]
 	divsd 	xmm2, [rdx]
-	stmxcsr [mxcsr_after]
+	;stmxcsr [mxcsr_after]
 	movsd 	[xmm], xmm2
 	mov 	rdi, f_div
 	movsd 	xmm0, [rsi]
@@ -158,8 +158,10 @@ apply_mxcsr:
 	mov 	rdi, [mxcsr_after]
 	call 	print_mxcsr
 
-leave
-ret
+	mov rsp, rbp
+	pop rbp
+
+	ret
 
 print_xmm:
 	push rbp
