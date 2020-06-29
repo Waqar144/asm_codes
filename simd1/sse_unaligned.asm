@@ -32,6 +32,9 @@ section .text
 	global main
 main:
 	; add 2 single precision floating point vectors
+	push rbp
+	mov  rbp, rsp
+	
 	mov rdi, fmt1
 	mov rsi, spvector1
 	call printspfp
